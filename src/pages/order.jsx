@@ -8,7 +8,7 @@ import { setDeliveryInfo } from '../slices/deliveryInfoSlice'
 import { excludeItem } from '../slices/orderSlice'
 
 import DeliveryInfo from '../forms/deliveryInfoForm'
-import TextArea from '../formItems/textarea'
+import TextArea from '../formItems/textArea'
 import BButton from '../formItems/button'
 
 //styles

@@ -117,6 +117,7 @@ export default function Home() {
                 .catch((err) => console.log(err))
         }
 
+        IsOpen(clientNumber)
         const interval = setInterval(() => {
             IsOpen(clientNumber)
         },30000)

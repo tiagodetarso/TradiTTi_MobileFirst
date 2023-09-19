@@ -26,7 +26,7 @@ export default function Menu() {
     
     const [ theProducts, setTheProducts ] = useState([])
     const [ productsArray, setProductsArray ] = useState([])
-    const [ removeLoad, setRemoveLoad ] = useState(false)
+    const [ load, setLoad ] = useState(true)
     
     
     //const products = useMemo(() => theProducts, [theProducts]);
@@ -73,7 +73,7 @@ export default function Menu() {
             }
         }
         setProductsArray(theProducts)
-        setRemoveLoad(true)
+        setLoad(false)
     }, [theProducts])
 
     useEffect(() => {
@@ -118,8 +118,10 @@ export default function Menu() {
                 :
                 <Button onClick={() => navigate("/order")}>ver como esta ficando o pedido</Button>
             }
+            { load ? 
+            <Loading /> :
             <SelectableList array={productsArray} />
-            { removeLoad && <Loading />}
+            }
         </MenuWrap>
     )
 }

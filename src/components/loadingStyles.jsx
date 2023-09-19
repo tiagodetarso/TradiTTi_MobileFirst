@@ -3,7 +3,7 @@ import { C_COLOR2, C_COLOR1 } from '../global'
 
 export const LoadingWrap = styled.div`
     width:100%;
-    height:150px;
+    height:100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,6 +11,6 @@ export const LoadingWrap = styled.div`
     background-color: ${C_COLOR1};
 
     img {
-        width: 100px;
+        width: 75px;
     }
 `

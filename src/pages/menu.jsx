@@ -103,7 +103,7 @@ export default function Menu() {
     }, [searchText, theProducts])
 
     function Search(text) {
-        dispatch(setSearchText(text))
+        dispatch(setSearchText(text.toLowerCase()))
     }
 
     return (

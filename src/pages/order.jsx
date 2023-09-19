@@ -105,7 +105,11 @@ export default function Order() {
         const extra = obj.extra
         let adicional = (
             <div>
-                <p>Adicionais:</p>
+                {
+                    extra.length >= 1 ?
+                    <p>Adicionais:</p> :
+                    <></>
+                }
                 <ul>
                     {
                         extra.map((item, index) => (

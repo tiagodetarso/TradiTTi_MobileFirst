@@ -18,6 +18,7 @@ import { HomeWrap } from './homeStyles'
 
 //components
 import BButton from '../formItems/button'
+import Loading from '../components/loading'
 
 
 export default function Home() {
@@ -30,7 +31,8 @@ export default function Home() {
     const [currentDay, setCurrentDay]=useState("")
     const [promotionImage, setPromotionImage] = useState("")
     const [price, setPrice] = useState("")
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
+    const [load, setLoad] = useState(true)
 
     const responsive = {
         0:{items:1},
@@ -112,6 +114,7 @@ export default function Home() {
                 .then((data) => {
                     if (data.msg === `Pesquisa realizada com sucesso!`) {
                         setIsOpen(data.content.isOpen)
+                        setLoad(false)
                     }
                 })
                 .catch((err) => console.log(err))
@@ -132,20 +135,23 @@ export default function Home() {
 
     return (
         <HomeWrap>
-            <div className='openClose'>
             {
-                isOpen ?
-                <>
-                    <h3 className='openned'>Estamos Abertos!!!</h3>
-                    <p>Clique no botão abaixo para selecionar os produtos do seu pedido.</p>
-                </> :
-                <>
-                    <h3 className='closed'>Estamos Fechados!!!</h3>
-                    <p>Tente em outro momento! Normalmente, entregamos de terça-feira a domingo, das 18:30 às 22:30.</p>
-                    <a></a>
-                </>
+                load ?
+                <Loading /> :
+                <div className='openClose'>
+                {
+                    isOpen ?
+                    <>
+                        <h3 className='openned'>Estamos Abertos!!!</h3>
+                        <p>Clique no botão abaixo para selecionar os produtos do seu pedido.</p>
+                    </> :
+                    <>
+                        <h3 className='closed'>Estamos Fechados!!!</h3>
+                        <p>Tente em outro momento! Normalmente, entregamos de terça-feira a domingo, das 18:30 às 22:30.</p>
+                    </>
+                }
+                </div>
             }
-            </div>
             <BButton text="Faça seu pedido!" handleOnClick= {GoMenu}/>
             <AliceCarousel 
                 mouseTracking

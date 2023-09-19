@@ -11,7 +11,6 @@ const media = {
 }
 
 export const TxtAreaWrap = styled.div`
-    font-family: cursive;
     width:100%;
     display: flex;
     flex-direction: column;
@@ -21,6 +20,7 @@ export const TxtAreaWrap = styled.div`
 
     label {
         font-weight: bold;
+        font-family: arial;
         color: ${D_COLOR2};
         align-self: center;
         padding-top:10px;
@@ -46,7 +46,7 @@ export const TxtAreaWrap = styled.div`
 
     textarea {
         background-color: #ffffff;
-        font-family: cursive;
+        font-family: arial;
         padding: 5px;
         margin:0;
         border: 1px solid #bdd358;

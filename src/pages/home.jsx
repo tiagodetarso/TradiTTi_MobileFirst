@@ -30,7 +30,7 @@ export default function Home() {
     const [currentDay, setCurrentDay]=useState("")
     const [promotionImage, setPromotionImage] = useState("")
     const [price, setPrice] = useState("")
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(true)
 
     const responsive = {
         0:{items:1},

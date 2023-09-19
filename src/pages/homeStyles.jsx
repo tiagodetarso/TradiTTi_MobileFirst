@@ -24,7 +24,7 @@ export const HomeWrap = styled.div`
         margin:0px;
         padding: 5px;
         font-style: italic;
-        font-family: cursive;
+        font-family: arial;
         color: ${D_COLOR1};
     }
 
@@ -32,7 +32,7 @@ export const HomeWrap = styled.div`
         margin: 0px;
         padding: 3px;
         font-style: italic;
-        font-family: cursive;
+        font-family: arial;
         color: ${D_COLOR1};
     }
 
@@ -41,7 +41,7 @@ export const HomeWrap = styled.div`
         padding-top: 10px;
         font-style: italic;
         font-size: 20px;
-        font-family: cursive;
+        font-family: arial;
         text-decoration: underline;
         ${media.other} {
             font-size: 25px;
@@ -59,8 +59,8 @@ export const HomeWrap = styled.div`
         margin:0;
         padding-bottom: 10px;
         font-style: italic;
-        font-family: cursive;
-        font-size: 14px;
+        font-family: arial;
+        font-size: 16px;
         font-weight: bold;
         text-align: justify;
         color: ${D_COLOR1};

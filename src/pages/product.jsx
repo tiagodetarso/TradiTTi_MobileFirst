@@ -136,7 +136,7 @@ export default function Product() {
     function OrderInstruction () {
         OpenDialog()
         setDialogTitle("Tudo certo.")
-        setDialogMessage("Agora clique no botão 'Adicionar ao Pedido' para colocar este item no pedido.")
+        setDialogMessage("Clique no botão 'ADICIONAR AO PEDIDO' para concluir este item.")
     }
 
     function goToOrder() {

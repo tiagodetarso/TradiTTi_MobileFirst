@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+// eslint-disable-next-line no-unused-vars
+import React, {useState} from 'react';
+import { useDispatch } from 'react-redux'
 import Box from '@mui/material/Box'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -60,7 +61,7 @@ export default function ListNumber ({ array }) {
                                 primaryTypographyProps={{
                                     color: {D_COLOR2},
                                     fontSize: 16,
-                                    fontFamily: 'cursive',
+                                    fontFamily: 'arial',
                                     lineHeight: '100%',
                                     justifyContent: 'center',
                                     alignItems: 'center'

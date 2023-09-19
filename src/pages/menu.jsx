@@ -11,6 +11,7 @@ import { MenuWrap } from './menuStyles'
 //components
 import SelectableList from '../components/list'
 import SearchProductForm from '../forms/searchProductForm'
+import Loading from '../components/loading'
 
 export default function Menu() {
 
@@ -25,6 +26,7 @@ export default function Menu() {
     
     const [ theProducts, setTheProducts ] = useState([])
     const [ productsArray, setProductsArray ] = useState([])
+    const [ removeLoad, setRemoveLoad ] = useState(false)
     
     
     //const products = useMemo(() => theProducts, [theProducts]);
@@ -71,6 +73,7 @@ export default function Menu() {
             }
         }
         setProductsArray(theProducts)
+        setRemoveLoad(true)
     }, [theProducts])
 
     useEffect(() => {
@@ -106,7 +109,7 @@ export default function Menu() {
     return (
         <MenuWrap>
             <h2>MENU</h2>
-            <h4>(clique sobre o produto para escolhê-lo)</h4>
+            <h3>(clique sobre o produto para escolhê-lo)</h3>
             <SearchProductForm handleSubmit={Search} btnText='Descrição pós hífen(-): sabor, tipo ou marca'/>
             {
                 orderItems.length <= 1 
@@ -116,6 +119,7 @@ export default function Menu() {
                 <Button onClick={() => navigate("/order")}>ver como esta ficando o pedido</Button>
             }
             <SelectableList array={productsArray} />
+            { removeLoad && <Loading />}
         </MenuWrap>
     )
 }

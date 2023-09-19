@@ -8,16 +8,17 @@ export const MenuWrap = styled.div`
     width: 100%;
     border: 1px solid ${M_COLOR};
     background-color: ${C_COLOR1};
-    font-family: cursive;
 
     h2 {
         margin:0;
         text-align: center;
+        font-family: cursive
     }
 
-    h4 {
+    h3 {
         margin:0;
         text-align: center;
         font-weight: normal;
+        font-family: arial;
     }
 `

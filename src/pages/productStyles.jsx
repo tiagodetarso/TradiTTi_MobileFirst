@@ -71,10 +71,10 @@ export const ProductWrap = styled.div`
         font-family: cursive;
         font-weight: bold;
         ${media.smallPhone} {
-            font-size: 15px;
+            font-size: 16px;
         };
         ${media.phone1} {
-            font-size: 17px;
+            font-size: 18px;
         };
         ${media.phone2} {
             font-size: 19px;
@@ -89,19 +89,19 @@ export const ProductWrap = styled.div`
         margin: 0;
         padding:5px;
         color: ${D_COLOR2};
-        font-family: cursive;
+        font-family: arial;
         font-style: italic;
         ${media.smallPhone} {
-            font-size: 12px;
+            font-size: 13px;
         };
         ${media.phone1} {
-            font-size: 14px;
+            font-size: 15px;
         };
         ${media.phone2} {
-            font-size: 16px;
+            font-size: 17px;
         };
         ${media.others} {
-            font-size: 18px;
+            font-size: 19px;
         };
     }
 
@@ -135,19 +135,19 @@ export const ProductWrap = styled.div`
         margin-top:10px
         padding:2px;
         color: ${D_COLOR2};
-        font-family: cursive;
+        font-family: arial;
         font-weight: bold;
         ${media.smallPhone} {
-            font-size: 15px;
-        };
-        ${media.phone1} {
             font-size: 17px;
         };
-        ${media.phone2} {
+        ${media.phone1} {
             font-size: 19px;
         };
-        ${media.others} {
+        ${media.phone2} {
             font-size: 21px;
+        };
+        ${media.others} {
+            font-size: 22px;
         };
     }
 

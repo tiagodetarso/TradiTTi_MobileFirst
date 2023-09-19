@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import ReactModal from 'react-modal'

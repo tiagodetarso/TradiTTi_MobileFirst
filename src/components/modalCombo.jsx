@@ -72,6 +72,42 @@ export default function ModalCombo ({ combo, qtt, txt, dialog, instruction }) {
         .catch((err) => console.log(err))
       }
 
+      function ComboDiversoList () {
+        fetch (`${apiUrl}/product/combodiversolist`, {
+          method: 'POST',
+          headers: {
+              'Content-type': 'application/json',
+          },
+          body: JSON.stringify({clientNumber: clientNumber, subType: 'esfiha'})
+        })
+        .then(resp => resp.json())
+        .then((data) => {
+            if (data.msg === "Pesquisa bem sucedida!") {
+              const initializedComboArray = data.content.map(item => ({ ...item, quantity: 0 }));
+              setComboList(initializedComboArray)
+            } 
+        })
+        .catch((err) => console.log(err))
+      }
+
+      function ComboEspecialList () {
+        fetch (`${apiUrl}/product/comboespeciallist`, {
+          method: 'POST',
+          headers: {
+              'Content-type': 'application/json',
+          },
+          body: JSON.stringify({clientNumber: clientNumber, subType: 'esfiha'})
+        })
+        .then(resp => resp.json())
+        .then((data) => {
+            if (data.msg === "Pesquisa bem sucedida!") {
+              const initializedComboArray = data.content.map(item => ({ ...item, quantity: 0 }));
+              setComboList(initializedComboArray);
+            } 
+        })
+        .catch((err) => console.log(err))
+      }
+
     useEffect(() => {
         combo === 'misto'
         ?
@@ -79,26 +115,9 @@ export default function ModalCombo ({ combo, qtt, txt, dialog, instruction }) {
         :
             combo === 'diverso 10' || combo === 'diverso 20'
             ?
-            setComboList([
-              {_id:1, specification:'calabresa', quantity:0},
-              {_id:2, specification:'calabresa com cebola', quantity:0},
-              {_id:3, specification:'frango com bacon', quantity:0},
-              {_id:4, specification:'frango com catupiry', quantity:0},
-              {_id:5, specification:'frango com cheddar', quantity:0},
-              {_id:6, specification:'milho com bacon', quantity:0},
-              {_id:7, specification:'palmito', quantity:0},
-              {_id:8, specification:'palmito com azeitona', quantity:0},
-              {_id:9, specification:'pizza', quantity:0},
-              {_id:10, specification:'quatro queijos', quantity:0},
-              {_id:11, specification:'queijo com bacon', quantity:0}
-            ])
+            ComboDiversoList()
             :
-            setComboList([
-              {_id:1, specification:'atum', quantity:0 },
-              {_id:2, specification:'carne com cream cheese', quantity:0 },
-              {_id:3, specification:'portuguesa', quantity:0 },
-              {_id:4, specification:'tomate seco', quantity:0 }
-            ])
+            ComboEspecialList()
     },[])
     
     function ComboChoice () {

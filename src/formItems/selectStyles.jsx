@@ -47,7 +47,7 @@ export const SelectWrap = styled.div`
         background-color: #ffffff;
         padding: 5px;
         margin: 0;
-        font-family: cursive;
+        font-family: arial;
         border: 1px solid #bdd358;
         border-radius: 10px;
         ${media.smallPhone} {

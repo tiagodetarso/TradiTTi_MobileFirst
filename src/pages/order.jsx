@@ -359,7 +359,6 @@ export default function Order() {
     },[orderItems, dayTime])
 
     useEffect(() => {
-        console.log(orderItems)
         DeliveryFee(clientNumber)
         DeliveryGap(clientNumber)
         PickupoGap(clientNumber)

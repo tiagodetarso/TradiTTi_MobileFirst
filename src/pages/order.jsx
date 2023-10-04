@@ -148,9 +148,8 @@ export default function Order() {
         }
     }
 
-    function Delete(obj) {
-        console.log(obj)
-        dispatch(excludeItem(obj))
+    function Delete(index) {
+        dispatch(excludeItem(index))
     }
 
     function GoMenu() {
@@ -417,7 +416,7 @@ export default function Order() {
                                         :
                                         <p className='width20'>{`R$ ${(element.quantity * element.value).toFixed(2).replace(".",",")}`}<br></br><br></br>{Adicional03(element)}</p>
                                     }
-                                    <p className='width5'><button className='trash' type='button' onClick={() => Delete(element)}><FaTrashAlt /></button></p>
+                                    <p className='width5'><button className='trash' type='button' onClick={() => Delete(index)}><FaTrashAlt /></button></p>
                                 </div>
                             )
                         }

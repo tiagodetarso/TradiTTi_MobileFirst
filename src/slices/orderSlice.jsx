@@ -22,7 +22,7 @@ export const orderSlice = createSlice({
         },
         excludeItem: (state, action) => {
             if (state.orderItems.length >=3) {
-                state.orderItems.splice(state.orderItems.indexOf(action.payload)-1, 1)
+                state.orderItems.splice(state.orderItems.indexOf(action.payload)+2, 1)
             } else {
                 state.orderItems.splice(state.orderItems.indexOf(action.payload), 1)
             }

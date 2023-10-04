@@ -149,6 +149,7 @@ export default function Order() {
     }
 
     function Delete(obj) {
+        console.log(obj)
         dispatch(excludeItem(obj))
     }
 
@@ -359,6 +360,7 @@ export default function Order() {
     },[orderItems, dayTime])
 
     useEffect(() => {
+        console.log(orderItems)
         DeliveryFee(clientNumber)
         DeliveryGap(clientNumber)
         PickupoGap(clientNumber)

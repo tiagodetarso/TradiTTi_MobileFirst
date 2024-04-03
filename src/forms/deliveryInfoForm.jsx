@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState, useEffect} from 'react'
-import { useSelector } from 'react-redux'
+import { useCookies } from 'react-cookie'
 
 import Select from '../formItems/select'
 import Input from '../formItems/input'
@@ -9,14 +9,22 @@ import {DeliveryInfoWrap} from './deliveryInfoFormStyles'
 
 export default function DeliveryInfo({ handleSubmit, deliveryTx, deliveryInterval, pickupInterval }) {
 
+    
     const apiUrl = import.meta.env.VITE_REACT_APP_API_URL
     const clientNumber = import.meta.env.VITE_REACT_APP_CLIENT_NUMBER
 
-    const deliveryInfo = useSelector((state) => state.delivery.info)
-
     const [neighborhoods, setNeighborhoods] = useState([])
-    const [info, setInfo] = useState(deliveryInfo)
-        
+    const [cookies, setCookie] = useCookies(['clientName', 'street', 'placeNumber', 'adressComplement', 'referencePoint', 'neighborhood'])
+    
+    cookies.clientName === undefined ? "" : cookies.clientName
+    cookies.street === undefined ? "" : cookies.street
+    cookies.placeNumber === undefined ? "" : cookies.placeNumber
+    cookies.adressComplement === undefined ? "" : cookies.adressComplement
+    cookies.referencePoint === undefined ? "" : cookies.referencePoint
+    cookies.neighborhood === undefined ? "" : cookies.neighborhood
+    
+    const [info, setInfo] = useState(cookies)
+
     const receiveWay =[ 
         "Entrega em domicílio",
         "Retirar no balcão para viagem",
@@ -29,13 +37,21 @@ export default function DeliveryInfo({ handleSubmit, deliveryTx, deliveryInterva
         "Cartão de Débito ou Crédito"
     ]
 
+    const definirCookiePermanente = () => {
+        const dataExpiracao = new Date()
+        dataExpiracao.setFullYear(dataExpiracao.getFullYear() + 1)
+        return dataExpiracao
+    }
+
     const submit = () => {
         handleSubmit(info)
     }
 
     const handleChange = (e) => {
         setInfo ({ ...info, [e.target.name]: e.target.value})
+        setCookie(e.target.name.toString(), e.target.value, { path: '/', expires: definirCookiePermanente() })
     }
+     
 
     useEffect(() => {
         function Neighborhood () {
@@ -162,6 +178,6 @@ export default function DeliveryInfo({ handleSubmit, deliveryTx, deliveryInterva
                     </>
             }
             </form>
-        </DeliveryInfoWrap>
+         </DeliveryInfoWrap>
     )
 }

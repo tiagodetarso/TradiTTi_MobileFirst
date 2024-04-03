@@ -2,8 +2,10 @@
 import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+
 import Button from '@mui/material/Button'
 import { FaTrashAlt } from 'react-icons/fa'
+
 import { setDeliveryInfo } from '../slices/deliveryInfoSlice'
 import { excludeItem } from '../slices/orderSlice'
 

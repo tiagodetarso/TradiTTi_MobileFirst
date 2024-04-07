@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 
 //images
-import logo from '../../images/logoBostonAlt.jpg'
+import logo from '../../images/logoBostonAlt.png'
 
 //styles
 import  { HeaderWrap } from './headerStyles'

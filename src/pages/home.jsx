@@ -5,13 +5,13 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
 //images
-import todoDia from '../../images/todoDiaBoston.jpg'
-import esfihaDoce from '../../images/esfihaChocoBoston.jpg'
-import Pastel from '../../images/pastelBoston.jpg'
-import Tilapia from '../../images/tilapiaBoston.jpg'
-import Alcatra from '../../images/alcatraBoston.jpg'
-import Balcao from '../../images/bostonFrente.jpg'
-import Closed from '../../images/fechadoBoston.jpg'
+import todoDia from '../../images/todoDiaBoston.png'
+import esfihaDoce from '../../images/esfihaChocoBoston.png'
+import Pastel from '../../images/pastelBoston.png'
+import Tilapia from '../../images/tilapiaBoston.png'
+import Alcatra from '../../images/alcatraBoston.png'
+import Balcao from '../../images/bostonFrente.png'
+import Closed from '../../images/fechadoBoston.png'
 
 //styles
 import { HomeWrap } from './homeStyles'
